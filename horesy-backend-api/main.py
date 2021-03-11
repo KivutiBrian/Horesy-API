@@ -23,3 +23,7 @@ app.add_middleware(
 @app.get("/hello")
 async def hello():
     return {"message": "Hello there!"}
+
+@app.post("/hello")
+async def test():
+    pass
