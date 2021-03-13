@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# model
+from models.hotel import *
+from models.user import *
+
 app = FastAPI(
     title='Horesy API',
     version='0.0.1',
