@@ -3,5 +3,5 @@ from sqlalchemy import Column, Integer, String, Boolean, DateTime,BIGINT, Foreig
 from sqlalchemy.orm import relationship, Session
 from sqlalchemy import func
 
-class User(Base):
-    __tablename__ = 'users'
+class Reservation(Base):
+    __tablename__ = 'reservations'
