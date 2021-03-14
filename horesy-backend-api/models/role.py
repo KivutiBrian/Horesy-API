@@ -12,7 +12,8 @@ class Role(Model, Base):
     id = Column(BIGINT, nullable=False, primary_key=True)
     name = Column(String, nullable=False)
     description = Column(Text, nullable=False)
+    visible = Column(Boolean, default=True)
     created_at = Column(DateTime, default=func.now(), nullable=False)
-    update_at = Column(DateTime, nullable=True)
+    updated_at = Column(DateTime, nullable=True)
     
     users = relationship('HotelUserRole', backref='role', cascade="all, delete, delete-orphan")

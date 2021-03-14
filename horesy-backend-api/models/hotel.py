@@ -18,5 +18,7 @@ class Hotel(Model, Base):
     owner_first_name = Column(String, nullable=False)
     owner_last_name = Column(String, nullable=False)
     verified = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=func.now(), nullable=False)
+    updated_at = Column(DateTime, nullable=True)
 
     users = relationship('HotelUserRole', back_populates='hotel', cascade="all, delete, delete-orphan")

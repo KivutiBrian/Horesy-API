@@ -14,7 +14,11 @@ class User(Model, Base):
     first_name = Column(String, nullable=False) 
     last_name = Column(String, nullable=False) 
     email = Column(String, nullable=False, unique=True) 
+    phone_number = Column(String, nullable=True)
     password = Column(String, nullable=False)
+    active_status = Column(Integer, nullable=False, default=1) # 0-retired 1-active 2-suspended 3-blocked
     verified = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=func.now(), nullable=False)
+    updated_at = Column(DateTime, nullable=True)
 
     hotels = relationship('HotelUserRole', back_populates='user', cascade="all, delete, delete-orphan")

@@ -14,9 +14,9 @@ from models.room import *
 from models.reservation import *
 
 # create all tables
-Base.metadata.create_all(bind=engine)
-# drop all tables
 # Base.metadata.create_all(bind=engine)
+# drop all tables
+Base.metadata.create_all(bind=engine)
 
 # routes
 from routes import (auth,user, hotel, role)
