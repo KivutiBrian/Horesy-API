@@ -13,8 +13,12 @@ class RolePut(RoleBase):
     pass
 
 class Role(RoleBase):
-    pid: int
+    pid: str
     id: int
     visible: bool
     created_at: Optional[datetime]
     updated_at: Optional[datetime]
+
+    class Config:
+       orm_mode = True
+ 
