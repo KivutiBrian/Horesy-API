@@ -1,12 +1,13 @@
-from configs.config_sqlalchemy import Base
-from sqlalchemy import Column, Integer, String, Boolean, DateTime,BIGINT, ForeignKey, JSON
+from sqlalchemy import Column, Integer, String, Boolean, DateTime,BIGINT, ForeignKey, JSON, Text
 from sqlalchemy.orm import relationship, Session
 from sqlalchemy import func
 
-from base import Model
+from .base import Model
+from configurations.sqlalchemy_config import Base
 
-class Role(Model):
-    __tablename__ = 'users'
+
+class Role(Model, Base):
+    __tablename__ = 'roles'
     pid = Column(String, nullable=False, unique=True)
     id = Column(BIGINT, nullable=False, primary_key=True)
     name = Column(String, nullable=False)

@@ -1,9 +1,25 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# sqlalchemy config
+from configurations.sqlalchemy_config import engine
+
 # model
 from models.hotel import *
+from models.role import *
 from models.user import *
+from models.hotel_user_role import *
+from models.roomtype import *
+from models.room import *
+from models.reservation import *
+
+# create all tables
+Base.metadata.create_all(bind=engine)
+# drop all tables
+# Base.metadata.create_all(bind=engine)
+
+# routes
+from routes import (auth,user, hotel, role)
 
 app = FastAPI(
     title='Horesy API',
@@ -24,10 +40,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/hello")
-async def hello():
-    return {"message": "Hello there!"}
-
-@app.post("/hello")
-async def test():
-    pass
+# include the routers
+app.include_router(role.router)
+app.include_router(auth.router)
+app.include_router(user.router)
+app.include_router(hotel.router)

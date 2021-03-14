@@ -1,10 +1,12 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime,BIGINT, ForeignKey
+from sqlalchemy import Column, Integer, String, Boolean, DateTime,BIGINT, ForeignKey, Text, JSON
 from sqlalchemy.orm import relationship, Session
 from sqlalchemy import func
 
-from base import Model
+from .base import Model
+from configurations.sqlalchemy_config import Base
 
-class Hotel(Model):
+
+class Hotel(Model, Base):
     __tablename__ = 'hotels'
     pid = Column(String, nullable=False, unique=True)
     id = Column(BIGINT, nullable=False, primary_key=True)

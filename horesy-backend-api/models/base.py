@@ -1,7 +1,7 @@
-from configurations.sqlalchemy_config import Base, get_db
+from configurations.sqlalchemy_config import Base
 from sqlalchemy.orm import Session
 
-class Model(Base):
+class Model:
 
     @classmethod
     def fetch_all(cls, db: Session):
