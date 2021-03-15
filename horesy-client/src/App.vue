@@ -1,32 +1,97 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+
+    <Header class="h-container">
+      <template #brand>
+        <h1 class="brand-name">Ho<span class="resy">resy</span></h1>
+      </template>
+
+      <template #nav>
+        <navbar>
+          <nav-link url="/">Home</nav-link>
+          <nav-link url="/about">About</nav-link>
+          <nav-link url="/offers">Offers</nav-link>
+          <nav-link url="/contacts">Contacts</nav-link>
+        </navbar>
+      </template>
+
+    </Header>
+
+    <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+
+import Header from './components/Header'
+import Navbar from './components/Nav'
+import NavLink from './components/Navlink'
+
+export default {
+  name: 'App',
+  components: {
+    Header,
+    Navbar,
+    NavLink
+  }
+}
+</script>
+
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+:root{
+  --dark-clor: #2d2c2c;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+// global styles
+html{
+  font-size: 10px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+body{
+  font-family: 'Crimson Text', serif;
 }
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul{
+  list-style: none;
+}
+
+section{
+  padding: 5rem 0;
+}
+
+// reusable
+.h-container{
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.brand-name{
+  font-family: 'Pacifico', cursive;
+  font-size: 2.4rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.resy{
+  color: #ef476f;
+}
+
 </style>
