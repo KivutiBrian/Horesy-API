@@ -1,8 +1,10 @@
 <template>
   <div>
-      <router-link class="link" :to="url">
+      <router-link  @click.native="$emit('hide-dropdown', false)" class="link" :to="url">
           <slot></slot>
       </router-link>
+
+      <!-- click.native="$emit('hide-dropdown', false)" -->
   </div>
 </template>
 
@@ -11,6 +13,11 @@ export default {
   name: 'NavLink',
   props: {
     url: String
+  },
+  methods: {
+    hello () {
+      console.log('Gaideh')
+    }
   }
 
 }

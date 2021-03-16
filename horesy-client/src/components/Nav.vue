@@ -1,6 +1,6 @@
 <template>
   <nav class="nav">
-      <ul class="nav-ul">
+      <ul class="nav-ul" :class="{'visible': showBars, 'hide':!showBars}">
           <slot></slot>
       </ul>
   </nav>
@@ -8,7 +8,10 @@
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  props: {
+    showBars: Boolean
+  }
 
 }
 </script>
@@ -31,7 +34,15 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1400;
+    z-index: 0;
+}
+
+.visible{
+  opacity: 1;
+}
+
+.hidden{
+  opacity: 0;
 }
 
 </style>
