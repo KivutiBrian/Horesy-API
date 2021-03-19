@@ -35,10 +35,14 @@ export default {
     align-items: center;
     justify-content: center;
     z-index: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: ease-out .3s;
 }
 
 .visible{
   opacity: 1;
+  transform: scale(1);
 }
 
 .hidden{
