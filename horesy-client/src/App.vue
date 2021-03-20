@@ -67,6 +67,11 @@ export default {
 
 :root{
   --dark-clor: #2d2c2c;
+  --purple-light: #8f50fb;
+  --yellow-solid: #fa9e2c;
+  --purple-transparent: rgba(53,10,79, .7);
+  --purple-transparent-alt: rgba(74, 12, 112, 0.5);
+  --gradient-color: linear-gradient(to right, var(--yellow-solid), var(--purple-light));
 }
 
 // global styles
@@ -98,6 +103,18 @@ section{
   padding: 0 1.5rem;
   margin: 0 auto;
 }
+
+.h-btn{
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: .5rem 3.5rem;
+  border: none;
+  border-radius: 10rem;
+}
+
+// reusable end here
 
 .brand-name{
   font-family: 'Pacifico', cursive;

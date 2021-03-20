@@ -37,7 +37,7 @@ export default {
     z-index: 0;
     opacity: 0;
     transform: scale(0);
-    transition: ease-out .3s;
+    transition: all .5s ease-in-out;
 }
 
 .visible{
