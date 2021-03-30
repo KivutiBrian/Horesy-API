@@ -8,7 +8,7 @@
 
       <template #nav>
         <navbar :showBars="showBars">
-          <nav-link @hide-dropdown="hideDropDown" url="/">Home</nav-link>
+          <nav-link @hide-dropdown="hideDropDown" url="/">Homeee</nav-link>
           <nav-link @hide-dropdown="hideDropDown" url="/about">About</nav-link>
           <nav-link @hide-dropdown="hideDropDown" url="/offers">Offers</nav-link>
           <nav-link @hide-dropdown="hideDropDown" url="/contacts">Contacts</nav-link>
